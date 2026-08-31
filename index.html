@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <title>BMX 라인 연습</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="title">BMX 라인 연습</div>
+      <div class="sub">8명이 함께 경기할 때 라인을 쉽게 익혀요</div>
+
+      <div class="viewer">
+        <img src="bmx-line.gif" alt="BMX 8명 라인 연습 애니메이션">
+      </div>
+
+      <div class="guide">
+        <div class="step">
+          <div class="num">1</div>
+          <div>
+            <b>스타트 게이트에서 내려올 때</b>
+            <p>오른쪽 <strong>2 · 3 · 4 라인</strong>을 봐요.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="num">2</div>
+          <div>
+            <b>코너를 돌 때</b>
+            <p><strong>왼쪽 안쪽</strong>으로 붙어서 돌아요.</p>
+          </div>
+        </div>
+      </div>
+
+      <button id="replay" type="button">↻ 처음부터 다시 보기</button>
+      <div class="tip">휴대폰을 가로로 돌리면 코스가 더 크게 보여요.</div>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById('replay').addEventListener('click', function () {
+      const img = document.querySelector('.viewer img');
+      const src = img.src.split('?')[0];
+      img.src = src + '?t=' + Date.now();
+    });
+  </script>
+</body>
+</html>
